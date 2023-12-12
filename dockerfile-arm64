@@ -7,7 +7,7 @@ RUN wget http://dlib.net/files/${DLIB}.tar.bz2
 RUN tar xvf ${DLIB}.tar.bz2
 RUN mkdir ${DLIB}/build
 RUN cmake ${DLIB}
-RUN cmake --build ${DLIB}/build
+RUN cmake --build .
 RUN sudo make install
 RUN sudo ldconfig
 RUN pkg-config ${DLIB} --libs --cflags dlib-1
