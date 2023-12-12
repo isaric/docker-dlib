@@ -6,7 +6,7 @@ ENV DLIB=dlib-${DLIB_VERSION}
 RUN wget http://dlib.net/files/${DLIB}.tar.bz2
 RUN tar xvf ${DLIB}.tar.bz2
 RUN mkdir ${DLIB}/build
-RUN cmake ${DLIB}/build
+RUN cmake ${DLIB}
 RUN cmake --build ${DLIB}/build --config Release
 RUN sudo make install
 RUN sudo ldconfig
