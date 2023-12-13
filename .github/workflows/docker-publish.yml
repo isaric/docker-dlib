@@ -19,7 +19,7 @@ env:
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
-  FULL_NAME: ghcr.io/${{ github.repository }}:python-opencv-4.8.0-dlib-19.24
+  FULL_NAME: ghcr.io/${{ github.repository }}:python-opencv-4.8.0-dlib-19.24.2
 
 
 jobs:
