@@ -3,7 +3,7 @@ FROM ghcr.io/isaric/python-opencv-docker:python-3.10-opencv-4.8.0-arm64
 ENV DLIB_VERSION=19.24.2
 ENV DLIB=dlib-${DLIB_VERSION}
 
-RUN wget https://github.com/davisking/dlib/archive/refs/tags/v{DLIB_VERSION}.tar.gz -o ${DLIB}.tar.gz
+RUN wget https://github.com/davisking/dlib/archive/refs/tags/v${DLIB_VERSION}.tar.gz -o ${DLIB}.tar.gz
 RUN tar xvf ${DLIB}.tar.gz
 RUN mkdir ${DLIB}/build
 RUN cmake ${DLIB}
