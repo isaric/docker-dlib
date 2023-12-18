@@ -1,0 +1,13 @@
+FROM ghcr.io/isaric/python-opencv-docker:python-3.10-opencv-4.8.0-amd64
+  
+ENV DLIB_VERSION=19.24.2
+ENV DLIB=dlib-${DLIB_VERSION}
+
+RUN wget https://github.com/davisking/dlib/archive/refs/tags/v${DLIB_VERSION}.tar.gz -O ${DLIB}.tar.gz
+RUN tar xvfz ${DLIB}.tar.gz
+RUN mkdir ${DLIB}/build
+RUN cmake ${DLIB}
+RUN cmake --build .
+RUN make install
+RUN ldconfig
+RUN pkg-config --libs --cflags dlib-1
